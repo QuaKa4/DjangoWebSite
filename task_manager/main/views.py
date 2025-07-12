@@ -1,6 +1,7 @@
 from dbm import error
 
 from django.shortcuts import render, redirect
+from django.template.defaultfilters import title
 
 from .forms import TaskManagerForm
 from .models import TaskManager
@@ -28,3 +29,6 @@ def create_task(request):
     context = {'form': form,
                'error': error}
     return render(request, 'main/create_task.html', context)
+
+def settings(request):
+    return render(request, 'main/settings.html', {'title': 'настройки'})
