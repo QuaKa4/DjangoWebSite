@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+   Написать сообщение
+{%endblock%}
+
+{% block content %}
+    <h2>Новое сообщение</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.user}}<br>
+        {{form.message}}<br>
+        {{form.date}}<br>
+        {{form.time}}
+        <button type="submit" class="btn btn-success">Отправить</button>
+        <span>{{error}}</span>
+    </form>
+{%endblock%}

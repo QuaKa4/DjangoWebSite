@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+ {{title}}
+{%endblock%}
+
+{% block content %}
+    <h1> Чат </h1>
+    {% if messages%}
+        {% for el in messages %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{el.user}}</h3>
+                <p>{{el.message}}</p>
+                <small>{{el.date}}</small>
+                <small>{{el.time}}</small>
+            </div>
+        {%endfor%}
+    {% else %}
+        <p>нет сообщений пока что тут вообще</p>
+    {%endif%}
+{%endblock%}
