@@ -5,6 +5,5 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('about-us', views.about, name='about-us'),
     path('create-task', views.create_task, name='create-task'),
-    path('chat', views.chat, name='chat'),
-    path('write-message', views.write_message, name='write')
+    path('settings', views.settings, name='settings'),
 ]
